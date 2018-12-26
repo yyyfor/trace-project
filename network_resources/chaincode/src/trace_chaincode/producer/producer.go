@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"github.com/hyperledger/fabric/core/chaincode/shim"
@@ -9,7 +10,7 @@ import (
 	"time"
 )
 
-type Producer struct {
+type ProducerChaincode struct {
 }
 
 type Product struct {
@@ -18,24 +19,24 @@ type Product struct {
 	Factory     string `json:"factory"`
 }
 
-func (t *Producer) Init(stub shim.ChaincodeStubInterface) pb.Response {
+func (t *ProducerChaincode) Init(stub shim.ChaincodeStubInterface) pb.Response {
 	return shim.Success([]byte("producer success init."))
 }
 
-func (t *Producer) Invoke(stub shim.ChaincodeStubInterface) pb.Response {
+func (t *ProducerChaincode) Invoke(stub shim.ChaincodeStubInterface) pb.Response {
 	funcName, args := stub.GetFunctionAndParameters()
 	if funcName == "putProduct" {
 		return t.putProduct(stub, args)
 	} else if funcName == "getProduct" {
 		return t.getProduct(stub, args)
-	} else if funcName == "getIdHistory" {
-		return t.getIdHistory(stub, args)
+	} else if funcName == "getProductHistory" {
+		return t.getProductHistory(stub, args)
 	}
 
 	return shim.Error(fmt.Sprintf("no such method."))
 }
 
-func (t *Producer) putProduct(stub shim.ChaincodeStubInterface, args []string) pb.Response {
+func (t *ProducerChaincode) putProduct(stub shim.ChaincodeStubInterface, args []string) pb.Response {
 	id := args[0]
 	productName := args[1]
 	factory := args[2]
@@ -72,11 +73,11 @@ func (t *Producer) putProduct(stub shim.ChaincodeStubInterface, args []string) p
 		shim.Error(err.Error())
 	}
 
-	return shim.Success([]byte("put product successful"))
+	return shim.Success([]byte(productAsJSONBytes))
 
 }
 
-func (t *Producer) getProduct(stub shim.ChaincodeStubInterface, args []string) pb.Response {
+func (t *ProducerChaincode) getProduct(stub shim.ChaincodeStubInterface, args []string) pb.Response {
 	id := args[0]
 	productAsJSON, err := stub.GetState(id)
 	if err != nil {
@@ -87,7 +88,10 @@ func (t *Producer) getProduct(stub shim.ChaincodeStubInterface, args []string) p
 	return shim.Success(productAsJSON)
 }
 
-func (t *Producer) getIdHistory(stub shim.ChaincodeStubInterface, args []string) pb.Response {
+func (t *ProducerChaincode) getProductHistory(stub shim.ChaincodeStubInterface, args []string) pb.Response {
+	if len(args) != 1 {
+		return shim.Error("parameter should be exact 1.")
+	}
 	id := args[0]
 	idIter, err := stub.GetHistoryForKey(id)
 	if err != nil {
@@ -97,34 +101,62 @@ func (t *Producer) getIdHistory(stub shim.ChaincodeStubInterface, args []string)
 	defer idIter.Close()
 
 	if idIter == nil {
-		return shim.Success([]byte("no history."))
+		return shim.Error("history is not exists.")
 	}
 
-	var keys []string
+	var buffer bytes.Buffer
+	buffer.WriteString("[")
+
+	bArrayMemberAlreadyWritten := false
 	for idIter.HasNext() {
 		response, err := idIter.Next()
 		if err != nil {
-			return shim.Error(fmt.Sprintf("Get History For id operaion failed. Error state is: %s", err))
+			return shim.Error(err.Error())
 		}
-		txid := response.TxId
-		txvalue := response.Value
-		txstatus := response.IsDelete
-		txtimestamp := response.Timestamp
-		tm := time.Unix(txtimestamp.Seconds, 0)
-		dateStr := tm.Format("2000-01-01 01:01:01 AM")
-		fmt.Printf("Tx info - txid:%s value: %s if delete:%t\ndatetime: %s", txid, string(txvalue), txstatus, dateStr)
-		keys = append(keys, string(txvalue)+":"+dateStr)
-	}
+		// Add a comma before array members, suppress it for the first array member
+		if bArrayMemberAlreadyWritten == true {
+			buffer.WriteString(",")
+		}
+		buffer.WriteString("{\"TxId\":")
+		buffer.WriteString("\"")
+		buffer.WriteString(response.TxId)
+		buffer.WriteString("\"")
 
-	jsonIds, err := json.Marshal(keys)
-	if err != nil {
-		return shim.Error(err.Error())
+		buffer.WriteString(", \"Value\":")
+		// if it was a delete operation on given key, then we need to set the
+		//corresponding value null. Else, we will write the response.Value
+		//as-is (as the Value itself a JSON marble)
+		if response.IsDelete {
+			buffer.WriteString("null")
+		} else {
+			buffer.WriteString(string(response.Value))
+		}
+
+		buffer.WriteString(", \"Timestamp\":")
+		buffer.WriteString("\"")
+		buffer.WriteString(time.Unix(response.Timestamp.Seconds, int64(response.Timestamp.Nanos)).String())
+		buffer.WriteString("\"")
+
+		buffer.WriteString(", \"IsDelete\":")
+		buffer.WriteString("\"")
+		buffer.WriteString(strconv.FormatBool(response.IsDelete))
+		buffer.WriteString("\"")
+
+		buffer.WriteString("}")
+		bArrayMemberAlreadyWritten = true
 	}
-	return shim.Success(jsonIds)
+	if !bArrayMemberAlreadyWritten {
+		buffer.WriteString("No record found")
+	}
+	buffer.WriteString("]")
+
+	fmt.Printf("- getAllTransactionForNumber returning:\n%s\n", buffer.String())
+
+	return shim.Success(buffer.Bytes())
 }
 
 func main() {
-	err := shim.Start(new(Producer))
+	err := shim.Start(new(ProducerChaincode))
 	if err != nil {
 		fmt.Printf("Error starting producer chaincode")
 	}

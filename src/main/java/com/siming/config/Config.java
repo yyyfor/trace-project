@@ -51,9 +51,10 @@ public class Config {
 	
 	public static final String ORDERER_NAME = "orderer.quanlian.tech";
 	
-	public static final String CHANNEL_NAME = "trace-channel";
-	public static final String PROCEDURE_CHANEL_NAME = "trace-channel";
-	public static final String SALE_CHANEL_NAME = "trace-channel";
+	public static final String PRODUCER_CHANNEL = "producer-channel";
+	public static final String FACTORY_CHANEL = "factory-channel";
+	public static final String SALE_CHANEL = "sale-channel";
+	public static final String TRACE_CHANEL = "trace-channel";
 
 	public static final String ORG1_PEER_0 = "peer0.org1.quanlian.tech";
 	
@@ -81,16 +82,30 @@ public class Config {
 	
 	public static final String CHAINCODE_ROOT_DIR = "network_resources" + File.separator + "chaincode";
 	
-	public static final String CHAINCODE_1_NAME = "process_v2";
+	public static final String CHAINCODE_1_NAME = "producer";
 	
-	public static final String CHAINCODE_1_PATH = "trace_chaincode" + File.separator + "process";
+	public static final String CHAINCODE_1_PATH = "trace_chaincode" + File.separator + "producer";
 	
-	public static final String CHAINCODE_1_VERSION = "1.2";
+	public static final String CHAINCODE_1_VERSION = "1.0";
 
-	public static final String CHAINCODE_2_NAME = "producer";
+	public static final String CHAINCODE_2_NAME = "factory";
 
-	public static final String CHAINCODE_2_PATH = "trace_chaincode" + File.separator + "producer";
+	public static final String CHAINCODE_2_PATH = "trace_chaincode" + File.separator + "factory";
 
-	public static final String CHAINCODE_2_VERSION = "1.1";
+	public static final String CHAINCODE_2_VERSION = "1.0";
+
+	public static final String CHAINCODE_3_NAME = "sale";
+
+	public static final String CHAINCODE_3_PATH = "trace_chaincode" + File.separator + "sale";
+
+	public static final String CHAINCODE_3_VERSION = "1.0";
+
+	public static final String CHAINCODE_TRACE_NAME = "trace";
+
+	public static final String CHAINCODE_TRACE_PATH = "trace_chaincode" + File.separator + "trace";
+
+	public static final String CHAINCODE_TRACE_VERSION = "1.2";
+
+
 
 }

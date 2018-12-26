@@ -1,16 +1,16 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/hyperledger/fabric/common/util"
 	"github.com/hyperledger/fabric/core/chaincode/shim"
 	pb "github.com/hyperledger/fabric/protos/peer"
 	"strconv"
 	"time"
 )
 
-type Sale struct {
+type SaleChaincode struct {
 }
 
 type Info struct {
@@ -19,26 +19,24 @@ type Info struct {
 	IsSale bool   `json:"isSale"`
 }
 
-func (t *Sale) Init(stub shim.ChaincodeStubInterface) pb.Response {
+func (t *SaleChaincode) Init(stub shim.ChaincodeStubInterface) pb.Response {
 	return shim.Success([]byte("Processor success init."))
 }
 
-func (t *Sale) Invoke(stub shim.ChaincodeStubInterface) pb.Response {
+func (t *SaleChaincode) Invoke(stub shim.ChaincodeStubInterface) pb.Response {
 	funcName, args := stub.GetFunctionAndParameters()
-	if funcName == "putInfo" {
+	if funcName == "putSaleInfo" {
 		return t.putInfo(stub, args)
-	} else if funcName == "getInfo" {
+	} else if funcName == "getSaleInfo" {
 		return t.getInfo(stub, args)
 	} else if funcName == "getIdHistory" {
 		return t.getIdHistory(stub, args)
-	} else if funcName == "getIdAllHistory" {
-		return t.getIdAllHistory(stub, args)
 	}
 
 	return shim.Error(fmt.Sprintf("no such method."))
 }
 
-func (t *Sale) putInfo(stub shim.ChaincodeStubInterface, args []string) pb.Response {
+func (t *SaleChaincode) putInfo(stub shim.ChaincodeStubInterface, args []string) pb.Response {
 	id := args[0]
 	storeName := args[1]
 	isSale := args[2]
@@ -79,11 +77,11 @@ func (t *Sale) putInfo(stub shim.ChaincodeStubInterface, args []string) pb.Respo
 		shim.Error(err.Error())
 	}
 
-	return shim.Success([]byte("put info successful"))
+	return shim.Success([]byte(infoAsJSONBytes))
 
 }
 
-func (t *Sale) getInfo(stub shim.ChaincodeStubInterface, args []string) pb.Response {
+func (t *SaleChaincode) getInfo(stub shim.ChaincodeStubInterface, args []string) pb.Response {
 	id := args[0]
 	infoAsJSON, err := stub.GetState(id)
 	if err != nil {
@@ -94,7 +92,10 @@ func (t *Sale) getInfo(stub shim.ChaincodeStubInterface, args []string) pb.Respo
 	return shim.Success(infoAsJSON)
 }
 
-func (t *Sale) getIdHistory(stub shim.ChaincodeStubInterface, args []string) pb.Response {
+func (t *SaleChaincode) getIdHistory(stub shim.ChaincodeStubInterface, args []string) pb.Response {
+	if len(args) != 1 {
+		return shim.Error("parameter should be exact 1.")
+	}
 	id := args[0]
 	idIter, err := stub.GetHistoryForKey(id)
 	if err != nil {
@@ -104,47 +105,75 @@ func (t *Sale) getIdHistory(stub shim.ChaincodeStubInterface, args []string) pb.
 	defer idIter.Close()
 
 	if idIter == nil {
-		return shim.Success([]byte("no history."))
+		return shim.Error("history is not exists.")
 	}
 
-	var keys []string
+	var buffer bytes.Buffer
+	buffer.WriteString("[")
+
+	bArrayMemberAlreadyWritten := false
 	for idIter.HasNext() {
 		response, err := idIter.Next()
 		if err != nil {
-			return shim.Error(fmt.Sprintf("Get History For id operaion failed. Error state is: %s", err))
+			return shim.Error(err.Error())
 		}
-		txid := response.TxId
-		txvalue := response.Value
-		txstatus := response.IsDelete
-		txtimestamp := response.Timestamp
-		tm := time.Unix(txtimestamp.Seconds, 0)
-		dateStr := tm.Format("2000-01-01 01:01:01 AM")
-		fmt.Printf("Tx info - txid:%s value: %s if delete:%t\ndatetime: %s", txid, string(txvalue), txstatus, dateStr)
-		keys = append(keys, string(txvalue)+":"+dateStr)
-	}
+		// Add a comma before array members, suppress it for the first array member
+		if bArrayMemberAlreadyWritten == true {
+			buffer.WriteString(",")
+		}
+		buffer.WriteString("{\"TxId\":")
+		buffer.WriteString("\"")
+		buffer.WriteString(response.TxId)
+		buffer.WriteString("\"")
 
-	jsonIds, err := json.Marshal(keys)
-	if err != nil {
-		return shim.Error(err.Error())
+		buffer.WriteString(", \"Value\":")
+		// if it was a delete operation on given key, then we need to set the
+		//corresponding value null. Else, we will write the response.Value
+		//as-is (as the Value itself a JSON marble)
+		if response.IsDelete {
+			buffer.WriteString("null")
+		} else {
+			buffer.WriteString(string(response.Value))
+		}
+
+		buffer.WriteString(", \"Timestamp\":")
+		buffer.WriteString("\"")
+		buffer.WriteString(time.Unix(response.Timestamp.Seconds, int64(response.Timestamp.Nanos)).String())
+		buffer.WriteString("\"")
+
+		buffer.WriteString(", \"IsDelete\":")
+		buffer.WriteString("\"")
+		buffer.WriteString(strconv.FormatBool(response.IsDelete))
+		buffer.WriteString("\"")
+
+		buffer.WriteString("}")
+		bArrayMemberAlreadyWritten = true
 	}
-	return shim.Success(jsonIds)
+	if !bArrayMemberAlreadyWritten {
+		buffer.WriteString("No record found")
+	}
+	buffer.WriteString("]")
+
+	fmt.Printf("- getAllTransactionForNumber returning:\n%s\n", buffer.String())
+
+	return shim.Success(buffer.Bytes())
 }
 
-func (t *Sale) getIdAllHistory(stub shim.ChaincodeStubInterface, args []string) pb.Response {
-	id := args[0]
-	invokeArgs := util.ToChaincodeArgs("invoke", "getIdHistory", id)
-	response := stub.InvokeChaincode("producer", invokeArgs, "trace_channel")
-	if response.Status != shim.OK {
-		errMsg := fmt.Sprint("Failed to invoke chaincode. error is %s", response.Payload)
-		return shim.Error(errMsg)
-	}
+// func (t *Sale) getIdAllHistory(stub shim.ChaincodeStubInterface, args []string) pb.Response {
+// 	id := args[0]
+// 	invokeArgs := util.ToChaincodeArgs("invoke", "getIdHistory", id)
+// 	response := stub.InvokeChaincode("producer", invokeArgs, "trace_channel")
+// 	if response.Status != shim.OK {
+// 		errMsg := fmt.Sprint("Failed to invoke chaincode. error is %s", response.Payload)
+// 		return shim.Error(errMsg)
+// 	}
 
-	return shim.Success(response.Payload)
+// 	return shim.Success(response.Payload)
 
-}
+// }
 
 func main() {
-	err := shim.Start(new(Sale))
+	err := shim.Start(new(SaleChaincode))
 	if err != nil {
 		fmt.Printf("Error starting producer chaincode")
 	}

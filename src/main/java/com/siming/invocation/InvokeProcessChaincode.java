@@ -35,7 +35,7 @@ public class InvokeProcessChaincode {
             adminUserContext = caClient.enrollAdminUser(Config.ADMIN, Config.ADMIN_PASSWORD);
             FabricClient fabricClient = new FabricClient(adminUserContext);
 
-            ChannelClient channelClient = fabricClient.createChannelClient(Config.CHANNEL_NAME);
+            ChannelClient channelClient = fabricClient.createChannelClient(Config.TRACE_CHANEL);
             Channel channel = channelClient.getChannel();
             Peer peer = fabricClient.getInstance().newPeer(Config.ORG1_PEER_0, Config.ORG1_PEER_0_URL);
             EventHub eventHub = fabricClient.getInstance().newEventHub("eventhub01", "grpc://localhost:7053");
@@ -46,10 +46,10 @@ public class InvokeProcessChaincode {
             channel.initialize();
 
             TransactionProposalRequest request = fabricClient.getInstance().newTransactionProposalRequest();
-            ChaincodeID ccid = ChaincodeID.newBuilder().setName(Config.CHAINCODE_1_NAME).setVersion(Config.CHAINCODE_1_VERSION).build();
+            ChaincodeID ccid = ChaincodeID.newBuilder().setName(Config.CHAINCODE_TRACE_NAME).setVersion(Config.CHAINCODE_TRACE_VERSION).build();
             request.setChaincodeID(ccid);
-            request.setFcn("getFactoryInfo");
-            String[] arguments = { "100"};
+            request.setFcn("getProduct");
+            String[] arguments = { "0"};
             request.setArgs(arguments);
 //            request.setFcn("getIdHistory");
 //            String[] arguments = { "5"};

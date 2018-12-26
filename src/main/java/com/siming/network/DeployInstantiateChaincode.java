@@ -59,7 +59,10 @@ public class DeployInstantiateChaincode {
             org3Admin.setName(Config.ADMIN);
 
             FabricClient fabricClient = new FabricClient(org1Admin);
-            Channel trace_channel = fabricClient.getInstance().newChannel(Config.CHANNEL_NAME);
+            Channel trace_channel = fabricClient.getInstance().newChannel(Config.TRACE_CHANEL);
+//            Channel producer_channel = fabricClient.getInstance().newChannel(Config.PRODUCER_CHANNEL);
+//            Channel factory_channel = fabricClient.getInstance().newChannel(Config.FACTORY_CHANEL);
+//            Channel sale_channel = fabricClient.getInstance().newChannel(Config.SALE_CHANEL);
             Orderer orderer = fabricClient.getInstance().newOrderer(Config.ORDERER_NAME, Config.ORDERER_URL);
             Peer peer0_org1 = fabricClient.getInstance().newPeer(Config.ORG1_PEER_0, Config.ORG1_PEER_0_URL);
             Peer peer1_org1 = fabricClient.getInstance().newPeer(Config.ORG1_PEER_1, Config.ORG1_PEER_1_URL);
@@ -67,6 +70,7 @@ public class DeployInstantiateChaincode {
             Peer peer1_org2 = fabricClient.getInstance().newPeer(Config.ORG2_PEER_1, Config.ORG2_PEER_1_URL);
             Peer peer0_org3 = fabricClient.getInstance().newPeer(Config.ORG3_PEER_0, Config.ORG3_PEER_0_URL);
             Peer peer1_org3 = fabricClient.getInstance().newPeer(Config.ORG3_PEER_1, Config.ORG3_PEER_1_URL);
+
             trace_channel.addOrderer(orderer);
             trace_channel.addPeer(peer0_org1);
             trace_channel.addPeer(peer1_org1);
@@ -75,6 +79,32 @@ public class DeployInstantiateChaincode {
             trace_channel.addPeer(peer0_org3);
             trace_channel.addPeer(peer1_org3);
             trace_channel.initialize();
+//            producer_channel.addOrderer(orderer);
+//            producer_channel.addPeer(peer0_org1);
+//            producer_channel.addPeer(peer1_org1);
+//            producer_channel.addPeer(peer0_org2);
+//            producer_channel.addPeer(peer1_org2);
+//            producer_channel.addPeer(peer0_org3);
+//            producer_channel.addPeer(peer1_org3);
+//            producer_channel.initialize();
+//
+//            factory_channel.addOrderer(orderer);
+//            factory_channel.addPeer(peer0_org1);
+//            factory_channel.addPeer(peer1_org1);
+//            factory_channel.addPeer(peer0_org2);
+//            factory_channel.addPeer(peer1_org2);
+//            factory_channel.addPeer(peer0_org3);
+//            factory_channel.addPeer(peer1_org3);
+//            factory_channel.initialize();
+//
+//            sale_channel.addOrderer(orderer);
+//            sale_channel.addPeer(peer0_org1);
+//            sale_channel.addPeer(peer1_org1);
+//            sale_channel.addPeer(peer0_org2);
+//            sale_channel.addPeer(peer1_org2);
+//            sale_channel.addPeer(peer0_org3);
+//            sale_channel.addPeer(peer1_org3);
+//            sale_channel.initialize();
 
             List<Peer> org1Peers = new ArrayList<Peer>();
             List<Peer> org2Peers = new ArrayList<Peer>();
@@ -86,44 +116,139 @@ public class DeployInstantiateChaincode {
             org3Peers.add(peer0_org3);
             org3Peers.add(peer1_org3);
 
-            Collection<ProposalResponse> response = fabricClient.deployChainCode(Config.CHAINCODE_1_NAME,Config.CHAINCODE_1_PATH,
-                    Config.CHAINCODE_ROOT_DIR, Chaincode.ChaincodeSpec.Type.GOLANG.toString(), Config.CHAINCODE_1_VERSION, org1Peers);
+            Collection<ProposalResponse> response = fabricClient.deployChainCode(Config.CHAINCODE_TRACE_NAME,Config.CHAINCODE_TRACE_PATH,
+                    Config.CHAINCODE_ROOT_DIR, Chaincode.ChaincodeSpec.Type.GOLANG.toString(), Config.CHAINCODE_TRACE_VERSION, org1Peers);
 
             for (ProposalResponse res : response) {
                 Logger.getLogger(DeployInstantiateChaincode.class.getName()).log(Level.INFO,
-                        Config.CHAINCODE_1_NAME + "- Chain code deployment " + res.getStatus());
+                        Config.CHAINCODE_TRACE_NAME + "- Chain code deployment " + res.getStatus());
             }
+
+//            Collection<ProposalResponse> response = fabricClient.deployChainCode(Config.CHAINCODE_1_NAME,Config.CHAINCODE_1_PATH,
+//                    Config.CHAINCODE_ROOT_DIR, Chaincode.ChaincodeSpec.Type.GOLANG.toString(), Config.CHAINCODE_1_VERSION, org1Peers);
+//
+//            for (ProposalResponse res : response) {
+//                Logger.getLogger(DeployInstantiateChaincode.class.getName()).log(Level.INFO,
+//                        Config.CHAINCODE_1_NAME + "- Chain code deployment " + res.getStatus());
+//            }
+//
+//            Collection<ProposalResponse> factory_response = fabricClient.deployChainCode(Config.CHAINCODE_2_NAME,Config.CHAINCODE_2_PATH,
+//                    Config.CHAINCODE_ROOT_DIR, Chaincode.ChaincodeSpec.Type.GOLANG.toString(), Config.CHAINCODE_2_VERSION, org1Peers);
+//
+//            for (ProposalResponse res : factory_response) {
+//                Logger.getLogger(DeployInstantiateChaincode.class.getName()).log(Level.INFO,
+//                        Config.CHAINCODE_2_NAME + "- Chain code deployment " + res.getStatus());
+//            }
+//
+//            Collection<ProposalResponse> sale_response = fabricClient.deployChainCode(Config.CHAINCODE_3_NAME,Config.CHAINCODE_3_PATH,
+//                    Config.CHAINCODE_ROOT_DIR, Chaincode.ChaincodeSpec.Type.GOLANG.toString(), Config.CHAINCODE_3_VERSION, org1Peers);
+//
+//            for (ProposalResponse res : sale_response) {
+//                Logger.getLogger(DeployInstantiateChaincode.class.getName()).log(Level.INFO,
+//                        Config.CHAINCODE_3_NAME + "- Chain code deployment " + res.getStatus());
+//            }
 
             fabricClient.getInstance().setUserContext(org2Admin);
 
-            response = fabricClient.deployChainCode(Config.CHAINCODE_1_NAME,
-                    Config.CHAINCODE_1_PATH, Config.CHAINCODE_ROOT_DIR, TransactionRequest.Type.GO_LANG.toString(),
-                    Config.CHAINCODE_1_VERSION, org2Peers);
+            response = fabricClient.deployChainCode(Config.CHAINCODE_TRACE_NAME,Config.CHAINCODE_TRACE_PATH,
+                    Config.CHAINCODE_ROOT_DIR, Chaincode.ChaincodeSpec.Type.GOLANG.toString(), Config.CHAINCODE_TRACE_VERSION, org2Peers);
 
             for (ProposalResponse res : response) {
                 Logger.getLogger(DeployInstantiateChaincode.class.getName()).log(Level.INFO,
-                        Config.CHAINCODE_1_NAME + "- Chain code deployment " + res.getStatus());
+                        Config.CHAINCODE_TRACE_NAME + "- Chain code deployment " + res.getStatus());
             }
+
+//            response = fabricClient.deployChainCode(Config.CHAINCODE_1_NAME,
+//                    Config.CHAINCODE_1_PATH, Config.CHAINCODE_ROOT_DIR, TransactionRequest.Type.GO_LANG.toString(),
+//                    Config.CHAINCODE_1_VERSION, org2Peers);
+//
+//            for (ProposalResponse res : response) {
+//                Logger.getLogger(DeployInstantiateChaincode.class.getName()).log(Level.INFO,
+//                        Config.CHAINCODE_1_NAME + "- Chain code deployment " + res.getStatus());
+//            }
+//
+//            factory_response = fabricClient.deployChainCode(Config.CHAINCODE_2_NAME,Config.CHAINCODE_2_PATH,
+//                    Config.CHAINCODE_ROOT_DIR, Chaincode.ChaincodeSpec.Type.GOLANG.toString(), Config.CHAINCODE_2_VERSION, org1Peers);
+//
+//            for (ProposalResponse res : factory_response) {
+//                Logger.getLogger(DeployInstantiateChaincode.class.getName()).log(Level.INFO,
+//                        Config.CHAINCODE_2_NAME + "- Chain code deployment " + res.getStatus());
+//            }
+//
+//            sale_response = fabricClient.deployChainCode(Config.CHAINCODE_3_NAME,Config.CHAINCODE_3_PATH,
+//                    Config.CHAINCODE_ROOT_DIR, Chaincode.ChaincodeSpec.Type.GOLANG.toString(), Config.CHAINCODE_3_VERSION, org1Peers);
+//
+//            for (ProposalResponse res : sale_response) {
+//                Logger.getLogger(DeployInstantiateChaincode.class.getName()).log(Level.INFO,
+//                        Config.CHAINCODE_3_NAME + "- Chain code deployment " + res.getStatus());
+//            }
 
             fabricClient.getInstance().setUserContext(org3Admin);
 
-            response = fabricClient.deployChainCode(Config.CHAINCODE_1_NAME,
-                    Config.CHAINCODE_1_PATH, Config.CHAINCODE_ROOT_DIR, TransactionRequest.Type.GO_LANG.toString(),
-                    Config.CHAINCODE_1_VERSION, org3Peers);
+            response = fabricClient.deployChainCode(Config.CHAINCODE_TRACE_NAME,Config.CHAINCODE_TRACE_PATH,
+                    Config.CHAINCODE_ROOT_DIR, Chaincode.ChaincodeSpec.Type.GOLANG.toString(), Config.CHAINCODE_TRACE_VERSION, org3Peers);
 
             for (ProposalResponse res : response) {
                 Logger.getLogger(DeployInstantiateChaincode.class.getName()).log(Level.INFO,
-                        Config.CHAINCODE_1_NAME + "- Chain code deployment " + res.getStatus());
+                        Config.CHAINCODE_TRACE_NAME + "- Chain code deployment " + res.getStatus());
             }
+
+//            response = fabricClient.deployChainCode(Config.CHAINCODE_1_NAME,
+//                    Config.CHAINCODE_1_PATH, Config.CHAINCODE_ROOT_DIR, TransactionRequest.Type.GO_LANG.toString(),
+//                    Config.CHAINCODE_1_VERSION, org3Peers);
+//
+//            for (ProposalResponse res : response) {
+//                Logger.getLogger(DeployInstantiateChaincode.class.getName()).log(Level.INFO,
+//                        Config.CHAINCODE_1_NAME + "- Chain code deployment " + res.getStatus());
+//            }
+//
+//            factory_response = fabricClient.deployChainCode(Config.CHAINCODE_2_NAME,Config.CHAINCODE_2_PATH,
+//                    Config.CHAINCODE_ROOT_DIR, Chaincode.ChaincodeSpec.Type.GOLANG.toString(), Config.CHAINCODE_2_VERSION, org1Peers);
+//
+//            for (ProposalResponse res : factory_response) {
+//                Logger.getLogger(DeployInstantiateChaincode.class.getName()).log(Level.INFO,
+//                        Config.CHAINCODE_2_NAME + "- Chain code deployment " + res.getStatus());
+//            }
+//
+//            sale_response = fabricClient.deployChainCode(Config.CHAINCODE_3_NAME,Config.CHAINCODE_3_PATH,
+//                    Config.CHAINCODE_ROOT_DIR, Chaincode.ChaincodeSpec.Type.GOLANG.toString(), Config.CHAINCODE_3_VERSION, org1Peers);
+//
+//            for (ProposalResponse res : sale_response) {
+//                Logger.getLogger(DeployInstantiateChaincode.class.getName()).log(Level.INFO,
+//                        Config.CHAINCODE_3_NAME + "- Chain code deployment " + res.getStatus());
+//            }
 
             ChannelClient channelClient = new ChannelClient(trace_channel.getName(), trace_channel, fabricClient);
             String [] arguments = {""};
-            response = channelClient.instantiateChainCode(Config.CHAINCODE_1_NAME, Config.CHAINCODE_1_VERSION,
-                    Config.CHAINCODE_1_PATH, Type.GO_LANG.toString(), "init", arguments, null);
+            response = channelClient.instantiateChainCode(Config.CHAINCODE_TRACE_NAME, Config.CHAINCODE_TRACE_VERSION,
+                    Config.CHAINCODE_TRACE_PATH, Type.GO_LANG.toString(), "init", arguments, null);
             for (ProposalResponse res : response) {
                 Logger.getLogger(DeployInstantiateChaincode.class.getName()).log(Level.INFO,
-                        Config.CHAINCODE_1_NAME + "- Chain code instantiation " + res.getStatus());
+                        Config.CHAINCODE_TRACE_NAME + "- Chain code instantiation " + res.getStatus());
             }
+
+//            ChannelClient channelClient = new ChannelClient(producer_channel.getName(), producer_channel, fabricClient);
+//            String [] arguments = {""};
+//            response = channelClient.instantiateChainCode(Config.CHAINCODE_1_NAME, Config.CHAINCODE_1_VERSION,
+//                    Config.CHAINCODE_1_PATH, Type.GO_LANG.toString(), "init", arguments, null);
+//            for (ProposalResponse res : response) {
+//                Logger.getLogger(DeployInstantiateChaincode.class.getName()).log(Level.INFO,
+//                        Config.CHAINCODE_1_NAME + "- Chain code instantiation " + res.getStatus());
+//            }
+
+//            factory_response = channelClient.instantiateChainCode(Config.CHAINCODE_2_NAME, Config.CHAINCODE_2_VERSION,
+//                    Config.CHAINCODE_2_PATH, Type.GO_LANG.toString(), "init", arguments, null);
+//            for (ProposalResponse res : factory_response) {
+//                Logger.getLogger(DeployInstantiateChaincode.class.getName()).log(Level.INFO,
+//                        Config.CHAINCODE_2_NAME + "- Chain code instantiation " + res.getStatus());
+//            }
+//
+//            sale_response = channelClient.instantiateChainCode(Config.CHAINCODE_3_NAME, Config.CHAINCODE_3_VERSION,
+//                    Config.CHAINCODE_3_PATH, Type.GO_LANG.toString(), "init", arguments, null);
+//            for (ProposalResponse res : sale_response) {
+//                Logger.getLogger(DeployInstantiateChaincode.class.getName()).log(Level.INFO,
+//                        Config.CHAINCODE_3_NAME + "- Chain code instantiation " + res.getStatus());
+//            }
 
         } catch (Exception e) {
             e.printStackTrace();
