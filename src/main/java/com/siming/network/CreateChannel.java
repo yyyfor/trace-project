@@ -15,7 +15,7 @@ public class CreateChannel {
     public static void main(String[] args) {
         try {
             CryptoSuite.Factory.getCryptoSuite();
-            Util.cleanUp();
+//            Util.cleanUp();
             UserContext org1Admin = new UserContext();
             File pkFolder1 = new File(Config.ORG1_USR_ADMIN_PK);
             File [] pkFiles1 = pkFolder1.listFiles();

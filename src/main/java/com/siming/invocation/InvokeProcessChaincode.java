@@ -8,6 +8,7 @@ import com.siming.user.UserContext;
 import com.siming.util.Util;
 import org.hyperledger.fabric.sdk.*;
 
+import java.security.InvalidParameterException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -22,6 +23,10 @@ public class InvokeProcessChaincode {
     private static final String EXPECTED_EVENT_NAME = "event";
 
     public static void main(String[] args) {
+
+        if(args.length != 3) {
+            throw new InvalidParameterException("parameters should be exactly 3.format is id, product, factory");
+        }
 
         try {
             Util.cleanUp();
@@ -49,8 +54,8 @@ public class InvokeProcessChaincode {
             ChaincodeID ccid = ChaincodeID.newBuilder().setName(Config.CHAINCODE_TRACE_NAME).setVersion(Config.CHAINCODE_TRACE_VERSION).build();
             request.setChaincodeID(ccid);
             request.setFcn("getProduct");
-            String[] arguments = { "0"};
-            request.setArgs(arguments);
+//            String[] arguments = { "10"};
+            request.setArgs(args);
 //            request.setFcn("getIdHistory");
 //            String[] arguments = { "5"};
 //            request.setFcn("getInfo");

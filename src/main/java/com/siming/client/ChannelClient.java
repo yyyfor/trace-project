@@ -95,4 +95,20 @@ public class ChannelClient {
                 "Chaincode " + chaincodeName + " on channel " + channel.getName() + " instantiation " + cf);
         return responses;
     }
+
+    public Collection<ProposalResponse> queryByChainCode(String chaincodeName, String functionName, String[] args)
+            throws InvalidArgumentException, ProposalException {
+        Logger.getLogger(ChannelClient.class.getName()).log(Level.INFO,
+                "Querying " + functionName + " on channel " + channel.getName());
+        QueryByChaincodeRequest request = fabricClient.getInstance().newQueryProposalRequest();
+        ChaincodeID ccid = ChaincodeID.newBuilder().setName(chaincodeName).build();
+        request.setChaincodeID(ccid);
+        request.setFcn(functionName);
+        if (args != null)
+            request.setArgs(args);
+
+        Collection<ProposalResponse> response = channel.queryByChaincode(request);
+
+        return response;
+    }
 }

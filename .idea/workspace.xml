@@ -2,26 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d62da067-1cf7-4658-8888-164551217db3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/siming/util/LogUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/siming/invocation/QueryChaincode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/siming/invocation/QueryHistoryChaincode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/src/main/java/com/siming/config/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/src/main/java/com/siming/config/Config.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/com/siming/client/ChannelClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/src/main/java/com/siming/client/ChannelClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/java/com/siming/invocation/InvokeProcessChaincode.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/src/main/java/com/siming/invocation/InvokeProcessChaincode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/src/main/java/com/siming/network/CreateChannel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/src/main/java/com/siming/network/CreateChannel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network_resources/chaincode/src/trace_chaincode/process/process.go" beforeDir="false" afterPath="$PROJECT_DIR$/network_resources/chaincode/src/trace_chaincode/process/process.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network_resources/chaincode/src/trace_chaincode/process/process_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/network_resources/chaincode/src/trace_chaincode/process/process_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network_resources/chaincode/src/trace_chaincode/process/process_v2.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/network_resources/chaincode/src/trace_chaincode/producer/producer.go" beforeDir="false" afterPath="$PROJECT_DIR$/network_resources/chaincode/src/trace_chaincode/producer/producer.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network_resources/chaincode/src/trace_chaincode/sale/sale.go" beforeDir="false" afterPath="$PROJECT_DIR$/network_resources/chaincode/src/trace_chaincode/sale/sale.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.quanlian.tech/ca/fabric-ca-server.db" beforeDir="false" afterPath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.quanlian.tech/ca/fabric-ca-server.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.quanlian.tech/ca/fabric-ca-server.db" beforeDir="false" afterPath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.quanlian.tech/ca/fabric-ca-server.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org3.quanlian.tech/ca/fabric-ca-server.db" beforeDir="false" afterPath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org3.quanlian.tech/ca/fabric-ca-server.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/siming/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/siming/config/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/siming/client/ChannelClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/siming/client/ChannelClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/siming/invocation/InvokeProcessChaincode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/siming/invocation/InvokeProcessChaincode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/siming/network/CreateChannel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/siming/network/CreateChannel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/siming/network/DeployInstantiateChaincode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/siming/network/DeployInstantiateChaincode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/siming/config/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/siming/config/Config.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/siming/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/siming/client/ChannelClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/siming/client/ChannelClient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/siming/invocation/InvokeProcessChaincode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/siming/invocation/InvokeProcessChaincode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/siming/network/CreateChannel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/siming/network/CreateChannel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/siming/network/DeployInstantiateChaincode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/siming/network/DeployInstantiateChaincode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/siming/AppTest.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -49,17 +47,18 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="go" value="9" />
-          <entry key="java" value="9255" />
+          <entry key="java" value="9975" />
           <entry key="properties" value="15" />
-          <entry key="xml" value="30" />
+          <entry key="txt" value="86" />
+          <entry key="xml" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="9255" />
-          <entry key="PLAIN_TEXT" value="9" />
+          <entry key="JAVA" value="9975" />
+          <entry key="PLAIN_TEXT" value="95" />
           <entry key="Properties" value="15" />
-          <entry key="XML" value="30" />
+          <entry key="XML" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -67,20 +66,20 @@
           <entry key="4b297a6480926e50995ae388bc62db0ae945dd42eabb91cd90194b76b026d19e_sk" value="2" />
           <entry key="class" value="5" />
           <entry key="go" value="3" />
-          <entry key="java" value="166" />
-          <entry key="properties" value="7" />
+          <entry key="java" value="193" />
+          <entry key="properties" value="9" />
           <entry key="sh" value="2" />
-          <entry key="xml" value="2" />
+          <entry key="xml" value="3" />
           <entry key="yaml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="5" />
-          <entry key="JAVA" value="166" />
+          <entry key="JAVA" value="193" />
           <entry key="PLAIN_TEXT" value="7" />
-          <entry key="Properties" value="7" />
-          <entry key="XML" value="2" />
+          <entry key="Properties" value="9" />
+          <entry key="XML" value="3" />
           <entry key="YAML" value="2" />
         </counts>
       </usages-collector>
@@ -91,20 +90,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/network/CreateChannel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="108" column="17" selection-start-line="108" selection-start-column="17" selection-end-line="108" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/user/RegisterEnrollUser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+            <state relative-caret-position="231">
+              <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -115,8 +102,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/network/DeployInstantiateChaincode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4294">
-              <caret line="226" column="51" selection-start-line="226" selection-start-column="51" selection-end-line="226" selection-end-column="51" />
+            <state relative-caret-position="418">
+              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -125,10 +112,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/user/CaEnrollment.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/invocation/QueryChaincode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-23">
-              <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+            <state relative-caret-position="59">
+              <caret line="26" column="47" lean-forward="true" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/invocation/QueryHistoryChaincode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="601">
+              <caret line="35" column="77" selection-start-line="35" selection-start-column="77" selection-end-line="35" selection-end-column="77" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/util/Util.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1265">
+              <caret line="67" column="26" selection-start-line="67" selection-start-column="26" selection-end-line="67" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -139,8 +150,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/invocation/InvokeProcessChaincode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="51" column="37" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
+            <state relative-caret-position="241">
+              <caret line="27" column="110" selection-start-line="27" selection-start-column="110" selection-end-line="27" selection-end-column="110" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -149,27 +160,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/client/ChannelClient.java">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="91" selection-start-line="91" selection-end-line="91" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/client/FabricClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="39" column="65" selection-start-line="39" selection-start-column="65" selection-end-line="39" selection-end-column="65" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#615#616#0" expanded="true" />
-                <element signature="e#646#647#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="130">
+              <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -177,39 +171,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/config/Config.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
+            <state relative-caret-position="203">
               <caret line="106" column="61" selection-start-line="106" selection-start-column="61" selection-end-line="106" selection-end-column="61" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/hyperledger/fabric-sdk-java/fabric-sdk-java/1.1.0/fabric-sdk-java-1.1.0-sources.jar!/org/hyperledger/fabric/sdk/HFClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="351" column="34" selection-start-line="351" selection-start-column="34" selection-end-line="351" selection-end-column="34" />
-              <folding>
-                <element signature="e#3869#3870#0" expanded="true" />
-                <element signature="e#3906#3907#0" expanded="true" />
-                <element signature="e#12841#12842#0" expanded="true" />
-                <element signature="e#12882#12883#0" expanded="true" />
-                <element signature="e#13075#13076#0" expanded="true" />
-                <element signature="e#13137#13138#0" expanded="true" />
-                <element signature="e#13488#13489#0" expanded="true" />
-                <element signature="e#13550#13551#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/src/main/resources/commons-logging.properties">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/util/LogUtil.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="746">
+              <caret line="54" column="33" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -230,6 +207,11 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Siming &lt;yyyfor3396@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
@@ -247,19 +229,21 @@
         <option value="$PROJECT_DIR$/src/main/java/com/siming/Test.java" />
         <option value="$PROJECT_DIR$/src/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/src/resources/commons-logging.properties" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/siming/client/CaClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/siming/user/RegisterEnrollUser.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/siming/client/FabricClient.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/siming/client/ChannelClient.java" />
         <option value="$PROJECT_DIR$/network_resources/chaincode/src/trace_chaincode/process/process.go" />
         <option value="$PROJECT_DIR$/src/main/java/com/siming/invocation/InvokeChaincode.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/siming/invocation/InvokeProcedureChaincode.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/siming/util/Util.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/siming/util/LogUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/siming/network/CreateChannel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/siming/network/DeployInstantiateChaincode.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/siming/config/Config.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/siming/client/ChannelClient.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/siming/invocation/QueryChaincode.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/siming/invocation/QueryHistoryChaincode.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/siming/network/CreateChannel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/siming/invocation/InvokeProcessChaincode.java" />
       </list>
     </option>
@@ -277,14 +261,20 @@
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="trace-project" type="9519ce18:MavenProjectsStructure$ProjectNode" />
         </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="trace-project" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
       </expand>
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="798" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1440" />
+    <option name="y" value="-59" />
+    <option name="width" value="1920" />
+    <option name="height" value="977" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -421,24 +411,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="siming" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trace-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trace-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="siming" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trace-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trace-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="siming" type="462c0819:PsiDirectoryNode" />
               <item name="invocation" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -455,25 +427,12 @@
               <item name="trace-project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="siming" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trace-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trace-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="siming" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trace-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trace-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trace-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trace-project" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -482,13 +441,16 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="Arrays&#9;PSI&#9;JAVA://java.util.Arrays&#10;Install&#9;FILE&#9;jar:///Users/ming/.m2/repository/org/hyperledger/fabric-sdk-java/fabric-sdk-java/1.1.0/fabric-sdk-java-1.1.0-sources.jar!/org/hyperledger/fabric/sdk/transaction/InstallProposalBuilder.java&#10;StringBuffer&#9;PSI&#9;JAVA://java.lang.StringBuffer&#10;StringBui&#9;PSI&#9;JAVA://java.lang.StringBuilder" />
+    <property name="SearchEverywhereHistoryKey" value="Collections&#9;PSI&#9;JAVA://java.util.Collections&#10;List&#9;PSI&#9;JAVA://java.util.List&#10;Arrays&#9;FILE&#9;jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/util/Arrays.java&#10;Install&#9;FILE&#9;jar:///Users/ming/.m2/repository/org/hyperledger/fabric-sdk-java/fabric-sdk-java/1.1.0/fabric-sdk-java-1.1.0-sources.jar!/org/hyperledger/fabric/sdk/transaction/InstallProposalBuilder.java&#10;StringBuffer&#9;PSI&#9;JAVA://java.lang.StringBuffer&#10;StringBui&#9;PSI&#9;JAVA://java.lang.StringBuilder" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545815068973" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545894343619" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
   </component>
   <component name="RecentsManager">
@@ -513,7 +475,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.InvokeProcessChaincode">
+  <component name="RunManager" selected="Application.CreateChannel">
     <configuration name="CreateChannel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.siming.network.CreateChannel" />
       <module name="trace-project" />
@@ -527,21 +489,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DeployInstantiateChaincode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.siming.network.DeployInstantiateChaincode" />
-      <module name="trace-project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.siming.network.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="InvokeChaincode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.siming.invocation.InvokeChaincode" />
+    <configuration name="InvokeProcessChaincode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.siming.invocation.InvokeProcessChaincode" />
       <module name="trace-project" />
       <extension name="coverage">
         <pattern>
@@ -553,9 +502,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InvokeProcessChaincode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.siming.invocation.InvokeProcessChaincode" />
+    <configuration name="QueryChaincode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.siming.invocation.QueryChaincode" />
       <module name="trace-project" />
+      <option name="PROGRAM_PARAMETERS" value="100" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.siming.invocation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QueryHistoryChaincode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.siming.invocation.QueryHistoryChaincode" />
+      <module name="trace-project" />
+      <option name="PROGRAM_PARAMETERS" value="100" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.siming.invocation.*" />
@@ -580,19 +544,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.CreateChannel" />
-      <item itemvalue="Application.DeployInstantiateChaincode" />
       <item itemvalue="Application.RegisterEnrollUser" />
-      <item itemvalue="Application.InvokeChaincode" />
       <item itemvalue="Application.InvokeProcessChaincode" />
+      <item itemvalue="Application.QueryChaincode" />
+      <item itemvalue="Application.QueryHistoryChaincode" />
+      <item itemvalue="Application.CreateChannel" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CreateChannel" />
+        <item itemvalue="Application.QueryHistoryChaincode" />
+        <item itemvalue="Application.QueryChaincode" />
         <item itemvalue="Application.InvokeProcessChaincode" />
         <item itemvalue="Application.RegisterEnrollUser" />
-        <item itemvalue="Application.DeployInstantiateChaincode" />
-        <item itemvalue="Application.CreateChannel" />
-        <item itemvalue="Application.InvokeChaincode" />
       </list>
     </recent_temporary>
   </component>
@@ -610,18 +574,26 @@
       <workItem from="1544320734450" duration="13716000" />
       <workItem from="1544356610742" duration="67345000" />
       <workItem from="1545140858551" duration="17219000" />
-      <workItem from="1545702102863" duration="13323000" />
+      <workItem from="1545702102863" duration="21400000" />
     </task>
+    <task id="LOCAL-00001" summary="chaincode version 1.&#10;&#10;TODO:&#10;Multiply Channel chaincode">
+      <created>1545815190897</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1545815190897</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117146000" />
+    <option name="totallyTimeSpent" value="125223000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="797" extended-state="6" />
+    <frame x="1440" y="-59" width="1920" height="977" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26609442" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19808307" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -630,7 +602,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32913166" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5078014" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5062147" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3987952" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -649,7 +621,7 @@
       <window_info anchor="right" id="Database" order="5" />
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Maven Projects" order="8" weight="0.3297568" />
+      <window_info anchor="right" id="Maven Projects" order="8" weight="0.32960597" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -657,6 +629,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="chaincode version 1.&#10;&#10;TODO:&#10;Multiply Channel chaincode" />
+    <option name="LAST_COMMIT_MESSAGE" value="chaincode version 1.&#10;&#10;TODO:&#10;Multiply Channel chaincode" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -671,92 +647,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/io/grpc/grpc-stub/1.11.0/grpc-stub-1.11.0-sources.jar!/io/grpc/stub/AbstractStub.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hyperledger/fabric-sdk-java/fabric-sdk-java/1.1.0/fabric-sdk-java-1.1.0-sources.jar!/org/hyperledger/fabric/protos/peer/EndorserGrpc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="189" selection-start-line="189" selection-end-line="189" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hyperledger/fabric-sdk-java/fabric-sdk-java/1.1.0/fabric-sdk-java-1.1.0-sources.jar!/org/hyperledger/fabric/sdk/EndorserClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="85" selection-start-line="85" selection-end-line="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hyperledger/fabric-sdk-java/fabric-sdk-java/1.1.0/fabric-sdk-java-1.1.0-sources.jar!/org/hyperledger/fabric/sdk/Peer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="212" selection-start-line="212" selection-end-line="212" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/guava/guava/20.0/guava-20.0-sources.jar!/com/google/common/util/concurrent/AbstractFuture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="400" selection-start-line="400" selection-end-line="400" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hyperledger/fabric-sdk-java/fabric-sdk-java/1.1.0/fabric-sdk-java-1.1.0-sources.jar!/org/hyperledger/fabric/protos/msp/MspConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="1189" column="8" selection-start-line="1189" selection-start-column="8" selection-end-line="1189" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/log4j.properties" />
-    <entry file="file://$PROJECT_DIR$/src/resources/commons-logging.properties" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hyperledger/fabric-sdk-java/fabric-sdk-java/1.1.0/fabric-sdk-java-1.1.0-sources.jar!/org/hyperledger/fabric/sdk/transaction/InstallProposalBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-353">
-          <caret line="182" column="56" selection-start-line="182" selection-start-column="56" selection-end-line="182" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hyperledger/fabric-sdk-java/fabric-sdk-java/1.1.0/fabric-sdk-java-1.1.0-sources.jar!/org/hyperledger/fabric/sdk/transaction/TransactionContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="124" column="16" selection-start-line="124" selection-start-column="16" selection-end-line="124" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/util/Arrays.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1601">
-          <caret line="70" column="13" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/io/File.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="730">
-          <caret line="1338" column="4" selection-start-line="1338" selection-start-column="4" selection-end-line="1338" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hyperledger/fabric-sdk-java/fabric-sdk-java/1.1.0/fabric-sdk-java-1.1.0-sources.jar!/org/hyperledger/fabric/sdk/ProposalResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="222" column="18" selection-start-line="222" selection-start-column="18" selection-end-line="222" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/hyperledger/fabric-sdk-java/fabric-sdk-java/1.1.0/fabric-sdk-java-1.1.0-sources.jar!/org/hyperledger/fabric/sdk/ChaincodeID.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="239">
@@ -799,13 +689,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="722">
           <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hyperledger/fabric-sdk-java/fabric-sdk-java/1.1.0/fabric-sdk-java-1.1.0-sources.jar!/org/hyperledger/fabric/sdk/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
         </state>
       </provider>
     </entry>
@@ -886,13 +769,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hyperledger/fabric-sdk-java/fabric-sdk-java/1.1.0/fabric-sdk-java-1.1.0-sources.jar!/org/hyperledger/fabric/sdk/Orderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="62" column="23" selection-start-line="62" selection-start-column="23" selection-end-line="62" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/hyperledger/fabric-sdk-java/fabric-sdk-java/1.1.0/fabric-sdk-java-1.1.0-sources.jar!/org/hyperledger/fabric/sdk/TransactionProposalRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
@@ -900,20 +776,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hyperledger/fabric-sdk-java/fabric-sdk-java/1.1.0/fabric-sdk-java-1.1.0-sources.jar!/org/hyperledger/fabric/sdk/ChannelConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="43" column="11" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/util/Collections.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="3716" column="32" lean-forward="true" selection-start-line="3716" selection-start-column="32" selection-end-line="3716" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="210" column="12" selection-start-line="210" selection-start-column="12" selection-end-line="210" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/util/Arrays.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="83" column="7" lean-forward="true" selection-start-line="83" selection-start-column="7" selection-end-line="83" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/invocation/InvokeProcedureChaincode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/client/CaClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="51" column="23" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -930,27 +824,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hyperledger/fabric-sdk-java/fabric-sdk-java/1.1.0/fabric-sdk-java-1.1.0-sources.jar!/org/hyperledger/fabric/sdk/ChannelConfiguration.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/util/LogUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="43" column="11" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/util/Util.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="112" column="5" selection-start-line="112" selection-start-column="5" selection-end-line="112" selection-end-column="5" />
+        <state relative-caret-position="209">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hyperledger/fabric-sdk-java/fabric-sdk-java/1.1.0/fabric-sdk-java-1.1.0-sources.jar!/org/hyperledger/fabric_ca/sdk/RegistrationRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="71" column="11" selection-start-line="71" selection-start-column="11" selection-end-line="71" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/user/RegisterEnrollUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/user/CaEnrollment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/client/CaClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#995#996#0" expanded="true" />
+            <element signature="e#1037#1038#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/client/FabricClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#615#616#0" expanded="true" />
+            <element signature="e#646#647#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hyperledger/fabric-sdk-java/fabric-sdk-java/1.1.0/fabric-sdk-java-1.1.0-sources.jar!/org/hyperledger/fabric/sdk/EventHub.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4853">
+          <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hyperledger/fabric-sdk-java/fabric-sdk-java/1.1.0/fabric-sdk-java-1.1.0-sources.jar!/org/hyperledger/fabric/sdk/helper/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="348" column="23" selection-start-line="348" selection-start-column="23" selection-end-line="348" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hyperledger/fabric-sdk-java/fabric-sdk-java/1.1.0/fabric-sdk-java-1.1.0-sources.jar!/org/hyperledger/fabric/sdk/Orderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="62" column="24" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/hyperledger/fabric-sdk-java/fabric-sdk-java/1.1.0/fabric-sdk-java-1.1.0-sources.jar!/org/hyperledger/fabric/sdk/HFClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
-          <caret line="351" column="34" selection-start-line="351" selection-start-column="34" selection-end-line="351" selection-end-column="34" />
+          <caret line="475" column="19" selection-start-line="475" selection-start-column="19" selection-end-line="475" selection-end-column="19" />
           <folding>
             <element signature="e#3869#3870#0" expanded="true" />
             <element signature="e#3906#3907#0" expanded="true" />
@@ -964,21 +923,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/client/FabricClient.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/util/Collection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="39" column="65" selection-start-line="39" selection-start-column="65" selection-end-line="39" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#615#616#0" expanded="true" />
-            <element signature="e#646#647#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="286">
+          <caret line="288" column="12" selection-start-line="288" selection-start-column="12" selection-end-line="288" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hyperledger/fabric-sdk-java/fabric-sdk-java/1.1.0/fabric-sdk-java-1.1.0-sources.jar!/org/hyperledger/fabric/sdk/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="71" column="16" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hyperledger/fabric-sdk-java/fabric-sdk-java/1.1.0/fabric-sdk-java-1.1.0-sources.jar!/org/hyperledger/fabric/sdk/transaction/TransactionContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="46" column="11" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/hyperledger/fabric-sdk-java/fabric-sdk-java/1.1.0/fabric-sdk-java-1.1.0-sources.jar!/org/hyperledger/fabric/sdk/Channel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
+        <state relative-caret-position="209">
           <caret line="948" column="19" selection-start-line="948" selection-start-column="19" selection-end-line="948" selection-end-column="19" />
           <folding>
             <element signature="e#42908#42909#0" expanded="true" />
@@ -991,40 +959,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/network/CreateChannel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="108" column="17" selection-start-line="108" selection-start-column="17" selection-end-line="108" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/util/LogUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/network/DeployInstantiateChaincode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4294">
-          <caret line="226" column="51" selection-start-line="226" selection-start-column="51" selection-end-line="226" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/client/ChannelClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="91" selection-start-line="91" selection-end-line="91" />
+        <state relative-caret-position="610">
+          <caret line="102" column="54" selection-start-line="102" selection-start-column="54" selection-end-line="102" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/invocation/QueryHistoryChaincode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="601">
+          <caret line="35" column="77" selection-start-line="35" selection-start-column="77" selection-end-line="35" selection-end-column="77" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/siming/AppTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/util/Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1265">
+          <caret line="67" column="26" selection-start-line="67" selection-start-column="26" selection-end-line="67" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1033,25 +1005,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/config/Config.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
+        <state relative-caret-position="203">
           <caret line="106" column="61" selection-start-line="106" selection-start-column="61" selection-end-line="106" selection-end-column="61" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/user/CaEnrollment.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/commons-logging.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-23">
-          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+        <state relative-caret-position="746">
+          <caret line="54" column="33" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/network/CreateChannel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/user/RegisterEnrollUser.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/network/DeployInstantiateChaincode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+        <state relative-caret-position="418">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/invocation/QueryChaincode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="26" column="47" lean-forward="true" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1060,8 +1052,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/invocation/InvokeProcessChaincode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="51" column="37" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
+        <state relative-caret-position="241">
+          <caret line="27" column="110" selection-start-line="27" selection-start-column="110" selection-end-line="27" selection-end-column="110" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1071,9 +1063,81 @@
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>trace-project</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: com.google.api.grpc:proto-google-common-protos:1.0.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
