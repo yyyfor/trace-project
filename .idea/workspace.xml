@@ -2,24 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d62da067-1cf7-4658-8888-164551217db3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/siming/invocation/QueryChaincode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/siming/invocation/QueryHistoryChaincode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/src/main/java/com/siming/client/ChannelClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/src/main/java/com/siming/client/ChannelClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/src/main/java/com/siming/invocation/InvokeProcessChaincode.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/src/main/java/com/siming/invocation/InvokeProcessChaincode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/src/main/java/com/siming/network/CreateChannel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/src/main/java/com/siming/network/CreateChannel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.quanlian.tech/ca/fabric-ca-server.db" beforeDir="false" afterPath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.quanlian.tech/ca/fabric-ca-server.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.quanlian.tech/ca/fabric-ca-server.db" beforeDir="false" afterPath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.quanlian.tech/ca/fabric-ca-server.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org3.quanlian.tech/ca/fabric-ca-server.db" beforeDir="false" afterPath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org3.quanlian.tech/ca/fabric-ca-server.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/siming/client/ChannelClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/siming/client/ChannelClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/siming/invocation/InvokeProcessChaincode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/siming/invocation/InvokeProcessChaincode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/siming/network/CreateChannel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/siming/network/CreateChannel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/siming/AppTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/siming/client/ChannelClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/siming/client/ChannelClient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/siming/invocation/InvokeProcessChaincode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/siming/invocation/InvokeProcessChaincode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/siming/network/CreateChannel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/siming/network/CreateChannel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/siming/AppTest.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -47,16 +33,16 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="go" value="9" />
-          <entry key="java" value="9975" />
+          <entry key="java" value="9988" />
           <entry key="properties" value="15" />
-          <entry key="txt" value="86" />
+          <entry key="txt" value="133" />
           <entry key="xml" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="9975" />
-          <entry key="PLAIN_TEXT" value="95" />
+          <entry key="JAVA" value="9988" />
+          <entry key="PLAIN_TEXT" value="142" />
           <entry key="Properties" value="15" />
           <entry key="XML" value="33" />
         </counts>
@@ -67,6 +53,7 @@
           <entry key="class" value="5" />
           <entry key="go" value="3" />
           <entry key="java" value="193" />
+          <entry key="md" value="1" />
           <entry key="properties" value="9" />
           <entry key="sh" value="2" />
           <entry key="xml" value="3" />
@@ -77,6 +64,7 @@
         <counts>
           <entry key="CLASS" value="5" />
           <entry key="JAVA" value="193" />
+          <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="7" />
           <entry key="Properties" value="9" />
           <entry key="XML" value="3" />
@@ -115,19 +103,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/invocation/QueryChaincode.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="59">
-              <caret line="26" column="47" lean-forward="true" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/invocation/QueryHistoryChaincode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="601">
-              <caret line="35" column="77" selection-start-line="35" selection-start-column="77" selection-end-line="35" selection-end-column="77" />
+              <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -147,14 +123,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/invocation/InvokeProcessChaincode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="27" column="110" selection-start-line="27" selection-start-column="110" selection-end-line="27" selection-end-column="110" />
+            <state relative-caret-position="458">
+              <caret line="68" column="52" selection-start-line="68" selection-start-column="52" selection-end-line="68" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -444,7 +430,7 @@
     <property name="SearchEverywhereHistoryKey" value="Collections&#9;PSI&#9;JAVA://java.util.Collections&#10;List&#9;PSI&#9;JAVA://java.util.List&#10;Arrays&#9;FILE&#9;jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/util/Arrays.java&#10;Install&#9;FILE&#9;jar:///Users/ming/.m2/repository/org/hyperledger/fabric-sdk-java/fabric-sdk-java/1.1.0/fabric-sdk-java-1.1.0-sources.jar!/org/hyperledger/fabric/sdk/transaction/InstallProposalBuilder.java&#10;StringBuffer&#9;PSI&#9;JAVA://java.lang.StringBuffer&#10;StringBui&#9;PSI&#9;JAVA://java.lang.StringBuilder" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545894343619" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545964265333" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -574,7 +560,7 @@
       <workItem from="1544320734450" duration="13716000" />
       <workItem from="1544356610742" duration="67345000" />
       <workItem from="1545140858551" duration="17219000" />
-      <workItem from="1545702102863" duration="21400000" />
+      <workItem from="1545702102863" duration="22535000" />
     </task>
     <task id="LOCAL-00001" summary="chaincode version 1.&#10;&#10;TODO:&#10;Multiply Channel chaincode">
       <created>1545815190897</created>
@@ -583,11 +569,18 @@
       <option name="project" value="LOCAL" />
       <updated>1545815190897</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="chaincode version 1.1.&#10;&#10;now run chaincode with parameters.&#10;&#10;TODO:&#10;Multiply Channel chaincode">
+      <created>1545894406486</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1545894406486</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125223000" />
+    <option name="totallyTimeSpent" value="126358000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-59" width="1920" height="977" extended-state="0" />
@@ -632,7 +625,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="chaincode version 1.&#10;&#10;TODO:&#10;Multiply Channel chaincode" />
-    <option name="LAST_COMMIT_MESSAGE" value="chaincode version 1.&#10;&#10;TODO:&#10;Multiply Channel chaincode" />
+    <MESSAGE value="chaincode version 1.1.&#10;&#10;now run chaincode with parameters.&#10;&#10;TODO:&#10;Multiply Channel chaincode" />
+    <option name="LAST_COMMIT_MESSAGE" value="chaincode version 1.1.&#10;&#10;now run chaincode with parameters.&#10;&#10;TODO:&#10;Multiply Channel chaincode" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -647,13 +641,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hyperledger/fabric-sdk-java/fabric-sdk-java/1.1.0/fabric-sdk-java-1.1.0-sources.jar!/org/hyperledger/fabric/sdk/ChaincodeID.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="104" column="23" selection-start-line="104" selection-start-column="23" selection-end-line="104" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/network_resources/chaincode/src/trace_chaincode/process/process_test.go">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1043,7 +1030,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/invocation/QueryChaincode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="59">
-          <caret line="26" column="47" lean-forward="true" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
+          <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1052,11 +1039,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/siming/invocation/InvokeProcessChaincode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="27" column="110" selection-start-line="27" selection-start-column="110" selection-end-line="27" selection-end-column="110" />
+        <state relative-caret-position="458">
+          <caret line="68" column="52" selection-start-line="68" selection-start-column="52" selection-end-line="68" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
         </state>
       </provider>
     </entry>

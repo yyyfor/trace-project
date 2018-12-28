@@ -53,7 +53,7 @@ public class InvokeProcessChaincode {
             TransactionProposalRequest request = fabricClient.getInstance().newTransactionProposalRequest();
             ChaincodeID ccid = ChaincodeID.newBuilder().setName(Config.CHAINCODE_TRACE_NAME).setVersion(Config.CHAINCODE_TRACE_VERSION).build();
             request.setChaincodeID(ccid);
-            request.setFcn("getProduct");
+            request.setFcn("putProduct");
 //            String[] arguments = { "10"};
             request.setArgs(args);
 //            request.setFcn("getIdHistory");
