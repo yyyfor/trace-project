@@ -10,6 +10,7 @@ import org.hyperledger.fabric.sdk.security.CryptoSuite;
 
 import java.io.File;
 
+/* start */
 public class CreateChannel {
 
     public static void main(String[] args) {
